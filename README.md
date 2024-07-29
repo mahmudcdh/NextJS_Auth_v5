@@ -17,8 +17,9 @@ GOOGLE_CLIENT_SECRET=google client secret
 GITHUB_ID=github id
 GITHUB_SECRET=github secret
 
-AUTH_SECRET=auth secret    [Generate AUTH SECRET please click this link](https://generate-secret.vercel.app/32)
+AUTH_SECRET=auth secret
 ```
+Note: [Generate AUTH SECRET please click this link](https://generate-secret.vercel.app/32)
 
 Finally, run the development server:
 
