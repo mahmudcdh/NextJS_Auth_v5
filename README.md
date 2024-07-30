@@ -2,7 +2,26 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, install node package:
+
+```bash
+npm install
+```
+
+Second, create a .env file in project root & write the below info carefully:
+
+```bash
+GOOGLE_CLIENT_ID=google client id
+GOOGLE_CLIENT_SECRET=google client secret
+
+GITHUB_ID=github id
+GITHUB_SECRET=github secret
+
+AUTH_SECRET=auth secret
+```
+Note: [Generate AUTH SECRET please click this link](https://generate-secret.vercel.app/32)
+
+Finally, run the development server:
 
 ```bash
 npm run dev
