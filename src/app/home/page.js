@@ -12,8 +12,12 @@ export default async function Home() {
 
   return (
     <div className="flex flex-row gap-3 items-center m-4">
-        <Image src={session?.user?.image} alt={ session?.user?.name } width={50} height={50} className="rounded-full" />
-        <h1 className="text-2xl my-2">{ session?.user?.name }</h1>
+      <h2 className="text-xl text-green-500 items-center text-center">Welcome Next Auth v5</h2>
+      {session?.user?.image && session?.user?.name ?
+        (<div><Image src={session?.user?.image} alt={ session?.user?.name } width={50} height={50} className="rounded-full" />
+        <h1 className="text-2xl my-2">{ session?.user?.name }</h1></div>)
+        :
+        (<h1 className="text-2xl my-2">{ session?.user?.email }</h1>)}
         <Logout/>
     </div>
   )

@@ -1,26 +1,20 @@
-import { GoalIcon, Mail } from "lucide-react";
-import { Button } from "../ui/button";
-import Image from "next/image";
-import { doSocialLogin } from "@/app/actions";
+
+import { auth } from "@/auth";
+import SocialLoginForm from "./SocialLoginForm";
+import CredentialsLoginForm from "./CredentialsLoginForm";
+import { redirect } from "next/navigation";
 
 
-export default function LoginForm() {
+export default async function LoginForm() {
+
+  const session = await auth();
+  if(session?.user) redirect('/home');
+
   return (
     <div>
-        <h2 className="mb-5 text-center">LoginForm</h2>
-        <form action={doSocialLogin}>
-            <Button variant="destructive" type="submit" name="action" value="google">
-              {/* <GoalIcon className="w-4 h-4 mr-2" /> */}
-              <Image src="/icons/google.svg" className="w-4 h-4 mr-2" width={16} height={16} alt="Google" />
-              Login with Google
-            </Button>
-            &nbsp;
-            <Button type="submit" name="action" value="github">
-              {/* <Mail className="w-4 h-4 mr-2" /> */}
-              <Image src="/icons/github.svg" className="w-4 h-4 mr-2" width={16} height={16} alt="Github" />
-              Login with Github
-            </Button>
-        </form>
+        <CredentialsLoginForm/>
+
+        <SocialLoginForm/>
     </div>
   )
 }
