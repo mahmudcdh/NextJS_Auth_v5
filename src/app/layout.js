@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { dbConnect } from "@/lib/mongo";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -8,7 +9,11 @@ export const metadata = {
   description: "NextJS with NextAuth v5",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  
+  const conn = await dbConnect();
+ 
+
   return (
     <html lang="en">
       <body className={inter.className}>

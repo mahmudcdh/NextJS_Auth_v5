@@ -39,7 +39,7 @@ export default function CredentialsLoginForm() {
     <>
         <h2 className="mb-3 text-center font-semibold">Login with User Credential</h2>
         {error && 
-        <div className="mb-1 p-2 text-center text-xs font-semibold bg-red-300 rounded-md">
+        <div className="mb-1 p-2 text-center text-xs font-semibold bg-red-300 rounded-md animate-pulse">
             {error}
         </div>
         }
